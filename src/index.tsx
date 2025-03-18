@@ -344,7 +344,8 @@
         }})],
 
           args,
-        }}/>, (...args:any) => <Elements.FlatList2 pass={{
+        }}/>, 
+        (...args:any) => <Elements.FlatList2 pass={{
           elementProperties: [
             {}
           ],
@@ -393,7 +394,54 @@
     minHeight: 22,
     width: "100%"
 }`],    args,
+        }}/>, 
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[
+              {
+                backgroundColor: 'white',
+                justifyContent: 'center',
+                minHeight: 22,
+                width: "100%",
+              }
+              ],
+
+            functions:[async (...args) =>
+ functions.funcGroup({ args, pass:{
+ arrFunctions: [
+async (...args) =>
+        functions.setVar({ args, pass:{
+          keyPath: ['example.A1.lists.iptsChanges.name'],
+          value: 'no value'
+        }}), 
+        (...args) => {
+          // ---------- get Function from A_Project Scope
+          return tools.goTo("sc4");
+        }
+        ]
+ , trigger: 'on press'
+}})],            childrenItems:[(...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            { color: 'black', fontSize: 12, }
+          ],
+
+          children: [
+            `clique aqui`
+          ],
+
+          args,
+
         }}/>],
+
+            args,
+          }}/>
+        ],
 
             args,
           }}/>
